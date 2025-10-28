@@ -2,6 +2,20 @@ let number1 = 0
 let number2 = 0
 let operator = ""
 
+function getOperation() {
+    number1 = document.getElementById("#calculator #screen #number1").innerHTML
+    if (number1 == "") {
+        number1 = 0
+    }
+    operator = document.getElementById("#calculator #screen #operator").innerHTML
+    number2 = document.getElementById("#calculator #screen #number2").innerHTML
+    if (number2 == "") {
+        number2 = 0
+    }
+}
+
+getOperation()
+
 function add() {
     return number1 + number2
 }
