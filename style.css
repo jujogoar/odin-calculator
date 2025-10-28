@@ -1,0 +1,24 @@
+#calculator {
+    width:350px;
+}
+#calculator #screen {
+    width:100%;
+    height:40px;
+    border-radius:5px;
+    background-color:rgb(204, 204, 204);
+    margin-bottom:5px;
+}
+#calculator #buttons .line {
+    display:flex;
+    gap:5px;
+    margin-bottom:5px;
+}
+#calculator #buttons .line button {
+    flex-grow:1;
+    padding:10px 5px;
+}
+#calculator #buttons .line button.wx2 {
+    flex-grow:2;
+    padding-left:20px;
+    padding-right:20px;
+}
