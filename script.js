@@ -19,6 +19,11 @@ function divide() {
 }
 
 function operate() {
+
+    if (operator == "" || (operator == "/" && number2 == 0)) {
+        return 0
+    }
+
     if (operator == "+") {
         return add()
     }
