@@ -17,8 +17,3 @@
     flex-grow:1;
     padding:10px 5px;
 }
-#calculator #buttons .line button.wx2 {
-    flex-grow:2;
-    padding-left:20px;
-    padding-right:20px;
-}
