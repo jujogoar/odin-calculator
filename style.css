@@ -2,11 +2,25 @@
     width:350px;
 }
 #calculator #screen {
-    width:100%;
+    width:calc(100% - 30px);
     height:40px;
     border-radius:5px;
     background-color:rgb(204, 204, 204);
     margin-bottom:5px;
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    font-size:16px;
+    padding:0 15px;
+}
+#calculator #screen div {
+    padding:0 8px;
+}
+#calculator #screen div#number1 {
+    padding-left:0;
+}
+#calculator #screen div#number2 {
+    padding-right:0;
 }
 #calculator #buttons .line {
     display:flex;
