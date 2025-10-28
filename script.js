@@ -58,6 +58,13 @@ function operate() {
     }
 }
 
+function processNumber(number) {
+    if (Number.isInteger(number)) {
+        return Number.parseInt(number)
+    }
+    return Number.parseFloat(Number.parseFloat(number).toFixed(2))
+}
+
 document.querySelectorAll("#calculator #buttons .line button").forEach((button) => {
     const key = button.innerHTML
     button.addEventListener("click", () => {
@@ -67,13 +74,13 @@ document.querySelectorAll("#calculator #buttons .line button").forEach((button) 
             operator = ""
         } else if (key == "=") {
             result = operate()
-            number1 = Math.floor(result)
+            number1 = processNumber(result)
             operator = ""
             number2 = ""
         } else if (!Number.isInteger(Number.parseInt(key))) {
             if (operator != "") {
                 result = operate()
-                number1 = Math.floor(result)
+                number1 = processNumber(result)
                 number2 = ""
             }
             operator = key
