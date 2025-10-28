@@ -65,9 +65,19 @@ document.querySelectorAll("#calculator #buttons .line button").forEach((button) 
             number1 = 0
             number2 = ""
             operator = ""
-        } else if (!Number.isInteger(Number.parseInt(key)) && operator == "") {
+        } else if (key == "=") {
+            result = operate()
+            number1 = Math.floor(result)
+            operator = ""
+            number2 = ""
+        } else if (!Number.isInteger(Number.parseInt(key))) {
+            if (operator != "") {
+                result = operate()
+                number1 = Math.floor(result)
+                number2 = ""
+            }
             operator = key
-        } else if (Number.isInteger(Number.parseInt(key))) {
+        } else {
             if (operator == "") {
                 number1 = Number.parseInt(`${number1}${key}`)
             } else {
