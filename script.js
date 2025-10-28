@@ -1,6 +1,7 @@
 let number1 = 0
 let number2 = ""
 let operator = ""
+let isResult = false
 
 function getOperation() {
     number1 = document.getElementById("number1").innerHTML
@@ -72,9 +73,11 @@ document.querySelectorAll("#calculator #buttons .line button").forEach((button) 
             number1 = 0
             number2 = ""
             operator = ""
+            isResult = false
         } else if (key == "=") {
             result = operate()
             number1 = processNumber(result)
+            isResult = true
             operator = ""
             number2 = ""
         } else if (!Number.isInteger(Number.parseInt(key))) {
@@ -83,8 +86,13 @@ document.querySelectorAll("#calculator #buttons .line button").forEach((button) 
                 number1 = processNumber(result)
                 number2 = ""
             }
+            isResult = false
             operator = key
         } else {
+            if (isResult) {
+                number1 = 0
+            }
+            isResult = false
             if (operator == "") {
                 number1 = Number.parseInt(`${number1}${key}`)
             } else {
